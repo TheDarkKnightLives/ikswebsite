@@ -1,0 +1,204 @@
+/* Basic styles for home screen and dark theme */
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height for vertical centering */
+  background-color: #1e1e1e; /* Dark background */
+  padding: 20px;
+}
+
+/* Title styles */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff; /* White text for title */
+  text-align: center;
+}
+
+.ring {
+  position: absolute; /* Position fixed to center */
+  top: -50px; /* Move the ring up; adjust this value as needed */
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid #ff5722; /* Ring color */
+  border-radius: 50%; /* Circle shape */
+  transform: translate(-50%, -50%); /* Center the ring */
+  opacity: 0; /* Hidden by default */
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease; /* Animation */
+  z-index: 1; /* Above other elements */
+  display: flex; /* Center text inside */
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; /* White text */
+  font-size: 1.5rem; /* Font size */
+ 
+}
+
+/* Updated margin-bottom for ring container */
+.ring-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the ring */
+  margin-bottom: -20px; /* Set to 0 or adjust as needed */
+  margin-top: 15px;
+}
+
+
+.ring.active {
+  width: 150px; /* Ring size */
+  height: 150px; /* Ring size */
+  opacity: 1; /* Make it visible */
+}
+
+/* Timeline container with vertical scroll */
+.timeline-container {
+  display: flex;
+  justify-content: center; /* Centering bubbles */
+  align-items: flex-start; /* Align items to the top */
+  height: 80%; /* Set height for visible scrolling */
+  width: 100vw; /* Full width for larger screens */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-top: 70px;
+  margin-top:50px;
+}
+
+/* Vertical layout for the timeline */
+.timeline {
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+  gap: 20px; /* Gap between bubbles */
+  align-items: center; /* Center bubbles */
+  width: 100%; /* Take full width of the container */
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+/* Bubbles (timeline events) */
+.timeline-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  position: relative; /* Position for line connection */
+}
+
+.padding {
+  height: 100px; /* Space to ensure scrolling works well */
+  width: 100%; /* Full width */
+}
+
+/* Bubbles styles */
+.bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: #333333; /* Dark gray background for bubbles */
+  border-radius: 50%;
+  color: #ffffff; /* White text inside bubbles */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s, background-color 0.3s;
+  animation: bounce 0.6s; /* Adding bounce animation */
+}
+
+.bubble:hover {
+  background-color: #555555; /* Lighter gray on hover */
+}
+
+.bubble:active {
+  background-color: #777777; /* Even lighter gray when clicked */
+}
+
+/* Connecting line */
+.line {
+  width: 2px;
+  height: 40px; /* Adjust the height for the line */
+  background-color: #555; /* Line color */
+  position: absolute; /* Positioning the line relative to the bubble */
+  top: 100%; /* Start from the bottom of the bubble */
+}
+
+/* Keyframe for bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Bounce effect */
+  }
+}
+
+/* Custom scrollbar styling for vertical scroll */
+.timeline-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #2b2b2b;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border-radius: 10px;
+}
+
+/* Responsive styles for smaller screens (mobile) */
+@media only screen and (max-width: 600px) {
+  .timeline-container {
+    height: 60vh; /* Reduce height on smaller screens */
+    width: 100vw; /* Full width for mobile */
+  }
+
+  .bubble {
+    width: 90px;
+    height: 90px;
+    font-size: 1rem; /* Reduce bubble size and font size */
+  }
+
+  .title {
+    font-size: 2rem; /* Smaller title font on mobile */
+  }
+}
+
+/* Responsive styles for medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .timeline-container {
+    height: 70vh; /* Increase height on tablets */
+  }
+
+  .bubble {
+    width: 100px;
+    height: 100px;
+    font-size: 1.1rem; /* Slightly larger bubbles and font */
+  }
+}
+
+/* Larger screens (laptops and desktops) */
+@media only screen and (min-width: 901px) {
+  .timeline-container {
+    height: 80vh; /* Keep the height tall for large screens */
+  }
+
+  .bubble {
+    width: 120px;
+    height: 120px;
+    font-size: 1.2rem; /* Larger bubbles and font */
+  }
+}
+
+/* Highlighted bubble style */
+.highlighted {
+  background-color: #ff5722; /* Bright color for highlighted bubble */
+  transform: scale(1.1); /* Slightly larger when highlighted */
+  transition: transform 0.3s, background-color 0.3s; /* Smooth transition */
+}

@@ -1,0 +1,126 @@
+.event2-container {
+    padding: 20px;
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the container */
+    text-align: center; /* Center the text by default */
+}
+
+.event2-header {
+    font-size: 2.5em; /* Larger header font size */
+    margin-bottom: 20px;
+}
+
+.event2-section {
+    margin: 40px auto; /* Space between sections */
+}
+
+.event2-header-section {
+    font-size: 2em; /* Larger section header */
+    margin: 20px 0; /* Space around headers */
+}
+
+.event2-content {
+    display: flex; /* Use flexbox for layout */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center the content */
+    margin: 20px 0; /* Space around the content */
+    flex-wrap: wrap; /* Allow wrapping of flex items */
+}
+
+.event2-image {
+    width: 300px; /* Fixed width for image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.event2-info {
+    text-align: center; /* Center-align text for better readability */
+    max-width: 600px; /* Maximum width for paragraphs */
+    padding: 0; /* No padding */
+}
+
+.event2-info p {
+    font-size: 1.2em; /* Larger paragraph font size */
+    line-height: 1.5; /* Increased line height for readability */
+}
+
+.video-section {
+    text-align: center; /* Center align the video section */
+    margin: 30px 0; /* Space around the video section */
+}
+
+.video-box {
+    border: 2px solid #ccc; /* Border around video box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Padding around the video */
+    cursor: pointer; /* Pointer cursor for clickability */
+    transition: transform 0.3s; /* Animation for hover effect */
+    margin: 20px auto; /* Center the video box with margin */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.video-box:hover {
+    transform: scale(1.02); /* Scale up on hover */
+}
+
+.video-title {
+    font-size: 1.5em; /* Larger title */
+    font-weight: bold; /* Bold title */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.modal-video {
+    width: 100%; /* Full width for modal video */
+    max-width: 800px; /* Maximum width for modal video */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.video-modal {
+    position: fixed; /* Fixed position for modal */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure modal is on top */
+}
+
+.close-button {
+    position: absolute; /* Position button at the top */
+    top: 20px;
+    right: 20px;
+    background: red; /* Red background for close button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+}
+
+@media (max-width: 600px) {
+    .event2-content {
+        flex-direction: column; /* Stack content vertically on small screens */
+        align-items: center; /* Center align items */
+    }
+
+    .event2-image {
+        margin-right: 0; /* No margin on smaller screens */
+        margin-bottom: 20px; /* Space below image */
+        width: 80%; /* Make image responsive */
+    }
+
+    .video-title {
+        font-size: 1.2em; /* Smaller title on small screens */
+    }
+
+    .modal-video {
+        max-width: 90%; /* Reduce width on small screens */
+    }
+
+    .event2-info {
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+}
